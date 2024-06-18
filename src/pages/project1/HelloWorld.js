@@ -3,7 +3,9 @@ import React from 'react'
 const HelloWorld = () => {
   return (
     <div>
-      Hello World
+      <h1 style={{textAlign : "center"}}>
+        Hello World
+      </h1>
     </div>
   )
 }
