@@ -14,7 +14,7 @@ const Navbar = () => {
                 </li>
                 <li className='navbar-li'>
                     <DropdownButton  variant="light" id="dropdown-basic-button" title="Projects">
-                        <Dropdown.Item href='projects/hello_world'>Hello world</Dropdown.Item>
+                        <Dropdown.Item ><Link className='navbar-link' to='/projects/hello_world'>Hello world</Link></Dropdown.Item>
                     </DropdownButton>
                 </li>
             </ul>
