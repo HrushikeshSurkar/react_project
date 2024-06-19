@@ -1,0 +1,11 @@
+.main-form-wrap{
+    margin: 0px 200px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 1px 5px 10px 1px;
+}
+
+.submit-button{
+    display: flex;
+    justify-content: end;
+}
