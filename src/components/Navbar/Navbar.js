@@ -19,15 +19,11 @@ const Navbar = () => {
             id="dropdown-basic-button"
             title="Projects"
           >
-            <Dropdown.Item>
-              <Link className="navbar-link" to="/projects/hello_world">
-                Hello world
-              </Link>
+            <Dropdown.Item as={Link} to="/projects/hello_world">
+              Hello world
             </Dropdown.Item>
-            <Dropdown.Item>
-              <Link className="navbar-link" to="/projects/crud_operation">
-                CRUD
-              </Link>
+            <Dropdown.Item as={Link} to="/projects/crud_operation">
+              CRUD
             </Dropdown.Item>
           </DropdownButton>
         </li>
