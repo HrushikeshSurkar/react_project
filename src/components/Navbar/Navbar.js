@@ -4,7 +4,7 @@ import "./Navbar.css";
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
 
-const Navbar = () => {
+const Navbar = ({ setIsLogin }) => {
   return (
     <nav className="navbar-main">
       <ul className="navbar-ul">
@@ -26,6 +26,15 @@ const Navbar = () => {
               CRUD
             </Dropdown.Item>
           </DropdownButton>
+        </li>
+        <li className="navbar-li">
+          <Link
+            className="navbar-link"
+            to="/"
+            onClick={() => setIsLogin(false)}
+          >
+            Logout
+          </Link>
         </li>
       </ul>
     </nav>

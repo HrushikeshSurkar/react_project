@@ -5,8 +5,7 @@ import "./Crud.css";
 import Table from "react-bootstrap/Table";
 import { useForm } from "react-hook-form";
 
-const Crud = () => {
-  const [formData, setFormData] = useState([]);
+const Crud = ({ loginTableData, setLoginTableData }) => {
   const [editingIndex, setEditingIndex] = useState(null);
   const {
     register,
@@ -17,36 +16,36 @@ const Crud = () => {
 
   const handleFormSubmit = (data) => {
     if (editingIndex === null) {
-      setFormData([
-        ...formData,
+      setLoginTableData([
+        ...loginTableData,
         { email: data.email, password: data.password },
       ]);
     } else {
-      const updatedData = [...formData];
+      const updatedData = [...loginTableData];
       updatedData[editingIndex] = {
         email: data.email,
         password: data.password,
       };
-      setFormData(updatedData);
+      setLoginTableData(updatedData);
       setEditingIndex(null);
     }
     reset();
   };
 
   const handleDelete = (index) => {
-    const updatedFormData = [...formData];
-    updatedFormData.splice(index, 1);
-    setFormData(updatedFormData);
+    const updatedloginTableData = [...loginTableData];
+    updatedloginTableData.splice(index, 1);
+    setLoginTableData(updatedloginTableData);
   };
 
   const handleEdit = (index) => {
-    const { email, password } = formData[index];
+    const { email, password } = loginTableData[index];
     reset({ email, password });
     setEditingIndex(index);
   };
   return (
     <div>
-      <h1>CRUD</h1>
+      <h1>CRUD (User Management Table)</h1>
       <div className="row">
         <div className="col-lg-6 col-md-12 col-sm-12">
           <Form
@@ -104,7 +103,7 @@ const Crud = () => {
             </div>
           </Form>
         </div>
-        {formData && formData.length > 0 && (
+        {loginTableData && loginTableData.length > 0 && (
           <div className="col-lg-6 col-md-12 col-sm-12">
             <Table striped bordered hover>
               <thead>
@@ -116,7 +115,7 @@ const Crud = () => {
                 </tr>
               </thead>
               <tbody>
-                {formData.map((item, index) => {
+                {loginTableData.map((item, index) => {
                   return (
                     <tr key={index}>
                       <td>{index + 1}</td>
